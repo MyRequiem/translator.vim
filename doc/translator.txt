@@ -1,0 +1,124 @@
+*translator.txt* Translate selected text
+
+	       ______                      __      __		    ~
+	      /_  __/________ _____  _____/ /___ _/ /_____  _____   ~
+	       / / / ___/ __ `/ __ \/ ___/ / __ `/ __/ __ \/ ___/   ~
+	      / / / /  / /_/ / / / (__  ) / /_/ / /_/ /_/ / /	    ~
+	     /_/ /_/   \__,_/_/ /_/____/_/\__,_/\__/\____/_/	    ~
+
+		    Translate selected text in visual mode ~
+		     Version: 1.0 Last change: 23.08.19 ~
+
+			      Reference Manual~
+==============================================================================
+CONTENTS						 *translator-contents*
+
+	1.Introduction .................. |translator-introduction|
+	2.Usage ......................... |translator-usage|
+	3.Configuation .................. |translator-configuation|
+		3.1.Enable/disable plugin |g:loaded_translator|
+		3.2.Hotkeys ............. |g:translator_hotkey|
+					  |g:translator_hotkey_reversed|
+		3.3.Translator parameters |g:translator_param|
+					  |g:translator_param_reversed|
+		3.4.Copying to clipboard  |g:translator_copy_to_clipboard|
+		3.5.Colors .............. |g:translator_color_translated_text|
+	4.Mappings ...................... |translator-mappings|
+	5.Changelog ..................... |translator-changelog|
+	6.Contributions ................. |translator-contributions|
+	7.License ....................... |translator-license|
+	8.About ......................... |translator-about|
+
+==============================================================================
+INTRODUCTION					     *translator-introduction*
+	Plugin allows you to translate the selected text in |Visual-mode|
+	mode. By default, the `translate-shell` utility is used for
+	translation, but you can use another program.
+
+	You can find `translate-shell` utility at:
+	Homepage: `https://www.soimort.org/translate-shell/`
+	Clone:	  `git clone https://github.com/soimort/translate-shell.git`
+==============================================================================
+USAGE							    *translator-usage*
+	Highlight the text in visual mode and press hotkey
+	(default <leader>t, see |g:translator_hotkey|). Press '<leader>T'
+	for translate of selected text backwards.
+	Translated text is displayed in the command window.
+==============================================================================
+CONFIGUATION					     *translator-configuation*
+
+	   You can specify any options listed below in your |vimrc|
+------------------------------------------------------------------------------
+|g:loaded_translator| (default: 0)			 *g:loaded_translator*
+	To disable the plugin set this variable to 1 >
+		let g:loaded_translator = 1
+<
+------------------------------------------------------------------------------
+|g:translator_hotkey| (default: <leader>t)		 *g:translator_hotkey*
+	Keyboard shortcut for launch translator >
+		let g:translator_hotkey = '<leader>t'
+<
+------------------------------------------------------------------------------
+|g:translator_hotkey_reversed|			*g:translator_hotkey_reversed*
+	(default: <leader>T)
+	Keyboard shortcut for translate text backwards >
+		let g:translator_hotkey_reversed = '<leader>T'
+<
+------------------------------------------------------------------------------
+|g:translator_param|					  *g:translator_param*
+	Parameters for the translator program. Default: >
+		let g:translator_param =
+			\ 'en:ru -brief -no-warn -d -browser /dev/null'
+<
+------------------------------------------------------------------------------
+|g:translator_param_reversed|			 *g:translator_param_reversed*
+	Parameters for backward translation. Default: >
+		let g:translator_param_reversed =
+			\ 'ru:en -brief -no-warn -d -browser /dev/null'
+<
+------------------------------------------------------------------------------
+|g:translator_copy_to_clipboard| (default: 0)   *g:translator_copy_to_clipboard*
+	Copy translated text to system clipboard. Vim should be compiled
+	with the |xterm-clipboard| (+xterm_clipboard) feature. To enable
+	copying, set the variable to 1: >
+		let g:g:translator_copy_to_clipboard = 1
+<
+------------------------------------------------------------------------------
+|g:translator_color_translated_text|	  *g:translator_color_translated_text*
+	Default: White
+	Possible values: Black, DarkBlue, DarkGreen, DarkCyan, DarkRed,
+			 DarkMagenta, DarkYellow, DarkGray, Gray, Blue,
+			 Green, Cyan, Red, Magenta, Yellow, White
+>
+		let g:translator_color_translated_text = 'DarkGreen'
+<
+==============================================================================
+MAPPINGS						 *translator-mappings*
+	<leader>t - Translation of selected text
+	<leader>T - Translation of selected text backwards
+
+	To change a keyboard shortcut, see |g:translator_hotkey| and
+	|g:translator_hotkey_reversed|
+==============================================================================
+CHANGELOG						*translator-changelog*
+`https://raw.githubusercontent.com/MyRequiem/translator.vim/master/ChangeLog.txt`
+
+==============================================================================
+CONTRIBUTIONS					    *translator-contributions*
+	Contributions and pull requests are welcome
+		`https://github.com/MyRequiem/translator.vim`
+
+==============================================================================
+LICENSE							  *translator-license*
+MIT License:
+`https://raw.githubusercontent.com/MyRequiem/translator.vim/master/LICENSE`
+
+==============================================================================
+ABOUT							    *translator-about*
+	Author: MyRequiem <mrvladislavovich@gmail.com>
+
+	Find the latest version of `translator.vim` at:
+		`https://github.com/MyRequiem/translator.vim`
+
+==============================================================================
+vim:tw=78:ts=8:sw=8:ft=help:norl:noet:

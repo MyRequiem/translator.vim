@@ -1,0 +1,17 @@
+g:loaded_translator	translator.txt	/*g:loaded_translator*
+g:translator_color_translated_text	translator.txt	/*g:translator_color_translated_text*
+g:translator_copy_to_clipboard	translator.txt	/*g:translator_copy_to_clipboard*
+g:translator_hotkey	translator.txt	/*g:translator_hotkey*
+g:translator_hotkey_reversed	translator.txt	/*g:translator_hotkey_reversed*
+g:translator_param	translator.txt	/*g:translator_param*
+g:translator_param_reversed	translator.txt	/*g:translator_param_reversed*
+translator-about	translator.txt	/*translator-about*
+translator-changelog	translator.txt	/*translator-changelog*
+translator-configuation	translator.txt	/*translator-configuation*
+translator-contents	translator.txt	/*translator-contents*
+translator-contributions	translator.txt	/*translator-contributions*
+translator-introduction	translator.txt	/*translator-introduction*
+translator-license	translator.txt	/*translator-license*
+translator-mappings	translator.txt	/*translator-mappings*
+translator-usage	translator.txt	/*translator-usage*
+translator.txt	translator.txt	/*translator.txt*

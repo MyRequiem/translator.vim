@@ -1,0 +1,12 @@
+{
+    "name" : "translator",
+    "version" : "1.0",
+    "author" : "MyRequiem <mrvladislavovich@gmail.com>",
+    "maintainer" : "MyRequiem <mrvladislavovich@gmail.com>",
+    "repository" : {
+        "type": "git",
+        "url": "git://github.com/MyRequiem/translator.vim"
+    },
+    "dependencies" : {},
+    "description" : "translator -- translate selected text"
+}
