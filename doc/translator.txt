@@ -1,4 +1,4 @@
-*translator.txt* Translate selected text
+*translator.txt* Translate selected text	      Last change: 2019 Aug 23
 
 	       ______                      __      __		    ~
 	      /_  __/________ _____  _____/ /___ _/ /_____  _____   ~
