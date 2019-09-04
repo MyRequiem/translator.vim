@@ -15,7 +15,7 @@ CONTENTS						 *translator-contents*
 
 	1.Introduction .................. |translator-introduction|
 	2.Usage ......................... |translator-usage|
-	3.Configuation .................. |translator-configuation|
+	3.Configuration ................. |translator-configuration|
 		3.1.Enable/disable plugin |g:loaded_translator|
 		3.2.Hotkeys ............. |g:translator_hotkey|
 					  |g:translator_hotkey_reversed|
@@ -45,7 +45,7 @@ USAGE							    *translator-usage*
 	for translate of selected text backwards.
 	Translated text is displayed in the command window.
 ==============================================================================
-CONFIGUATION					     *translator-configuation*
+CONFIGURATION					    *translator-configuration*
 
 	   You can specify any options listed below in your |vimrc|
 ------------------------------------------------------------------------------

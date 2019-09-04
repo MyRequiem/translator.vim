@@ -7,7 +7,7 @@ g:translator_param	translator.txt	/*g:translator_param*
 g:translator_param_reversed	translator.txt	/*g:translator_param_reversed*
 translator-about	translator.txt	/*translator-about*
 translator-changelog	translator.txt	/*translator-changelog*
-translator-configuation	translator.txt	/*translator-configuation*
+translator-configuration	translator.txt	/*translator-configuration*
 translator-contents	translator.txt	/*translator-contents*
 translator-contributions	translator.txt	/*translator-contributions*
 translator-introduction	translator.txt	/*translator-introduction*

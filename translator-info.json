@@ -8,5 +8,5 @@
         "url": "git://github.com/MyRequiem/translator.vim"
     },
     "dependencies" : {},
-    "description" : "translator -- translate selected text"
+    "description" : "translator -- Translate selected text"
 }
