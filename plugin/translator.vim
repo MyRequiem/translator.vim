@@ -1,7 +1,7 @@
 " File:         translator.vim
 " Type:         utility
-" Version:      1.0
-" Date:         23.08.19
+" Version:      1.1
+" Date:         14.12.19
 " Author:       MyRequiem <mrvladislavovich@gmail.com>
 " License:      MIT
 " Description:  Translate selected text
@@ -28,10 +28,15 @@ setlocal selection=inclusive
 
 let g:translator_color_translated_text =
         \ get(g:, 'translator_color_translated_text', 'White')
+let g:translator_bgcolor_translated_text =
+        \ get(g:, 'translator_bgcolor_translated_text', 'Black')
 
-execute printf('hi TranslatedStr cterm=NONE ctermfg=%s gui=NONE guifg=%s',
+execute printf('hi TranslatedStr cterm=NONE ctermfg=%s ctermbg=%s gui=NONE ' .
+             \ 'guifg=%s guibg=%s',
              \ g:translator_color_translated_text,
-             \ g:translator_color_translated_text
+             \ g:translator_bgcolor_translated_text,
+             \ g:translator_color_translated_text,
+             \ g:translator_bgcolor_translated_text
         \)
 
 let g:translator_hotkey          = get(g:, 'translator_hotkey', '<leader>t')

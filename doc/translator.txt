@@ -1,4 +1,4 @@
-*translator.txt*	    For Vim version 8.1.      Last change: 2019 Aug 23
+*translator.txt*	    For Vim version 8.1.      Last change: 2019 Dec 14
 
 	       ______                      __      __		    ~
 	      /_  __/________ _____  _____/ /___ _/ /_____  _____   ~
@@ -7,7 +7,7 @@
 	     /_/ /_/   \__,_/_/ /_/____/_/\__,_/\__/\____/_/	    ~
 
 		    Translate selected text in visual mode ~
-		     Version: 1.0 Last change: 23.08.19 ~
+		     Version: 1.1 Last change: 14.12.19 ~
 
 			      Reference Manual~
 ==============================================================================
@@ -23,6 +23,7 @@ CONTENTS						 *translator-contents*
 					  |g:translator_param_reversed|
 		3.4.Copying to clipboard  |g:translator_copy_to_clipboard|
 		3.5.Colors .............. |g:translator_color_translated_text|
+					  |g:translator_bgcolor_translated_text|
 	4.Mappings ...................... |translator-mappings|
 	5.Changelog ..................... |translator-changelog|
 	6.Contributions ................. |translator-contributions|
@@ -85,12 +86,23 @@ CONFIGURATION					    *translator-configuration*
 <
 ------------------------------------------------------------------------------
 |g:translator_color_translated_text|	  *g:translator_color_translated_text*
+	Color translated text.
 	Default: White
 	Possible values: Black, DarkBlue, DarkGreen, DarkCyan, DarkRed,
 			 DarkMagenta, DarkYellow, DarkGray, Gray, Blue,
-			 Green, Cyan, Red, Magenta, Yellow, White
+			 Green, Cyan, Red, Magenta, Yellow, White, NONE
 >
 		let g:translator_color_translated_text = 'DarkGreen'
+<
+------------------------------------------------------------------------------
+|g:translator_bgcolor_translated_text|    *g:translator_bgcolor_translated_text*
+	Background color translated text.
+	Default: Black
+	Possible values: Black, DarkBlue, DarkGreen, DarkCyan, DarkRed,
+			 DarkMagenta, DarkYellow, DarkGray, Gray, Blue,
+			 Green, Cyan, Red, Magenta, Yellow, White, NONE
+>
+		let g:translator_bgcolor_translated_text = 'Black'
 <
 ==============================================================================
 MAPPINGS						 *translator-mappings*

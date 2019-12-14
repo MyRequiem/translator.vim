@@ -1,4 +1,5 @@
 g:loaded_translator	translator.txt	/*g:loaded_translator*
+g:translator_bgcolor_translated_text	translator.txt	/*g:translator_bgcolor_translated_text*
 g:translator_color_translated_text	translator.txt	/*g:translator_color_translated_text*
 g:translator_copy_to_clipboard	translator.txt	/*g:translator_copy_to_clipboard*
 g:translator_hotkey	translator.txt	/*g:translator_hotkey*
