@@ -3,9 +3,6 @@ g:translator_bgcolor_translated_text	translator.txt	/*g:translator_bgcolor_trans
 g:translator_color_translated_text	translator.txt	/*g:translator_color_translated_text*
 g:translator_copy_to_clipboard	translator.txt	/*g:translator_copy_to_clipboard*
 g:translator_hotkey	translator.txt	/*g:translator_hotkey*
-g:translator_hotkey_reversed	translator.txt	/*g:translator_hotkey_reversed*
-g:translator_param	translator.txt	/*g:translator_param*
-g:translator_param_reversed	translator.txt	/*g:translator_param_reversed*
 translator-about	translator.txt	/*translator-about*
 translator-changelog	translator.txt	/*translator-changelog*
 translator-configuration	translator.txt	/*translator-configuration*

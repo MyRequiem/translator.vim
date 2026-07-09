@@ -1,48 +1,40 @@
-" File:         translator.vim
-" Type:         utility
-" Version:      1.1
-" Date:         14.12.19
-" Author:       MyRequiem <mrvladislavovich@gmail.com>
-" License:      MIT
-" Description:  Translate selected text
+vim9script
 
-scriptencoding utf-8
+# File:         translator.vim
+# Type:         utility
+# Version:      2.0
+# Date:         2026 Jul 09
+# Author:       MyRequiem <mrvladislavovich@gmail.com>
+# License:      MIT
+# Description:  Selected text translation utility using translate-shell.
 
-if exists('g:loaded_translator') && g:loaded_translator
+# Prevent loading if disabled or already loaded.
+if exists('g:loaded_translator') && g:loaded_translator == 1
+    finish
+endif
+g:loaded_translator = 1
+
+# Check for the required translate-shell executable.
+if !executable('trans')
+    echoerr 'Translator Error: "trans" executable (translate-shell) not found in PATH'
     finish
 endif
 
-let g:loaded_translator = 1
-
-let g:translator_bin = get(g:, 'translator_bin', 'trans')
-
-if !executable(g:translator_bin)
-    echoerr 'Executable file "' . g:translator_bin . '" not found'
-    finish
-endif
-
-let g:translator_param          = get(g:, 'translator_param', '')
-let g:translator_param_reversed = get(g:, 'translator_param_reversed', '')
+# Import autoload functions with script-local alias.
+import autoload '../autoload/translator.vim' as tr
 
 setlocal selection=inclusive
 
-let g:translator_color_translated_text =
-        \ get(g:, 'translator_color_translated_text', 'White')
-let g:translator_bgcolor_translated_text =
-        \ get(g:, 'translator_bgcolor_translated_text', 'Black')
+# Initialize global plugin configuration variables.
+g:translator_hotkey                  = get(g:, 'translator_hotkey', '<leader>t')
+g:translator_copy_to_clipboard       = get(g:, 'translator_copy_to_clipboard', 0)
+g:translator_color_translated_text   = get(g:, 'translator_color_translated_text', 'White')
+g:translator_bgcolor_translated_text = get(g:, 'translator_bgcolor_translated_text', 'Black')
 
-execute printf('hi TranslatedStr cterm=NONE ctermfg=%s ctermbg=%s gui=NONE ' .
-             \ 'guifg=%s guibg=%s',
-             \ g:translator_color_translated_text,
-             \ g:translator_bgcolor_translated_text,
-             \ g:translator_color_translated_text,
-             \ g:translator_bgcolor_translated_text
-        \)
+# Define highlight group dynamically using string interpolation.
+execute($'hi TranslatedStr cterm=NONE ctermfg={g:translator_color_translated_text} ctermbg={g:translator_bgcolor_translated_text} gui=NONE guifg={g:translator_color_translated_text} guibg={g:translator_bgcolor_translated_text}')
 
-let g:translator_hotkey          = get(g:, 'translator_hotkey', '<leader>t')
-let g:translator_hotkey_reversed = get(g:, 'translator_hotkey_reversed',
-                                        \ '<leader>T')
-execute 'vnoremap ' . g:translator_hotkey .
-    \ " :call translator#Translate_selected()\<CR>"
-execute 'vnoremap ' . g:translator_hotkey_reversed .
-    \ " :call translator#Translate_selected(1)\<CR>"
+# Map hotkey using <ScriptCmd> to safely evaluate the alias context.
+execute($'vnoremap <silent> {g:translator_hotkey} <ScriptCmd>tr.Translate_selected()<CR>')
+
+# vim:nowrap
