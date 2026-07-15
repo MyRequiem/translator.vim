@@ -21,7 +21,7 @@ if !executable('trans')
 endif
 
 # Import autoload functions with script-local alias.
-import autoload '../autoload/translator.vim' as tr
+import autoload '../autoload/translator.vim'
 
 setlocal selection=inclusive
 
@@ -35,6 +35,6 @@ g:translator_bgcolor_translated_text = get(g:, 'translator_bgcolor_translated_te
 execute($'hi TranslatedStr cterm=NONE ctermfg={g:translator_color_translated_text} ctermbg={g:translator_bgcolor_translated_text} gui=NONE guifg={g:translator_color_translated_text} guibg={g:translator_bgcolor_translated_text}')
 
 # Map hotkey using <ScriptCmd> to safely evaluate the alias context.
-execute($'vnoremap <silent> {g:translator_hotkey} <ScriptCmd>tr.Translate_selected()<CR>')
+execute($'vnoremap <silent> {g:translator_hotkey} <ScriptCmd>translator.Translate_selected()<CR>')
 
 # vim:nowrap
