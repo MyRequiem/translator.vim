@@ -1,3 +1,7 @@
+2.1 [14.10.26]
+    * Fixed a Vim9script compilation error in environments without clipboard support (e.g., TTY).
+    * Added fallback to register '1' if the system clipboard ('unnamedplus') is unavailable.
+
 2.0 [09.07.26]
     * Rewritten from Vimscript to Vim9script.
     * Removed:

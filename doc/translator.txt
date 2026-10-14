@@ -1,4 +1,4 @@
-*translator.txt*	    For Vim version 9.0+      Last change: 2026 July 09
+*translator.txt*	    For Vim version 9.0+      Last change: 2026 Oct 14
 
 	       ______                      __      __		    ~
 	      /_  __/________ _____  _____/ /___ _/ /_____  _____   ~
@@ -7,7 +7,7 @@
 	     /_/ /_/   \__,_/_/ /_/____/_/\__,_/\__/\____/_/	    ~
 
 		      Selected text translation utility ~
-		     Version: 2.0 Last change: 2026.07.09 ~
+		     Version: 2.1 Last change: 2026.10.14 ~
 
 			      Reference Manual~
 ==============================================================================
@@ -30,7 +30,7 @@ CONTENTS						 *translator-contents*
 INTRODUCTION					     *translator-introduction*
 
 	This plugin translates visually selected text using `translate-shell`
-	as the backend engine. 
+	as the backend engine.
 
 	The plugin automatically detects the translation direction by scanning
 	the visual selection for Cyrillic characters. If Russian text is found,
@@ -43,7 +43,7 @@ INTRODUCTION					     *translator-introduction*
 USAGE							    *translator-usage*
 
 	Highlight text in |Visual-mode| and press the translation hotkey
-	(Default: <leader>t, see |g:translator_hotkey|). 
+	(Default: <leader>t, see |g:translator_hotkey|).
 
 	The translated text is displayed directly in the command-line area with
 	custom highlights, without leaving any temporary messages behind.
@@ -72,6 +72,10 @@ CONFIGURATION					    *translator-configuration*
 	with the |+clipboard| or |+xterm_clipboard| feature. To enable copying,
 	set the variable to 1: >
 		g:translator_copy_to_clipboard = 1
+<
+	Note: If this variable is set to 1 but Vim is compiled without clipboard
+	support (e.g., in a clean TTY environment), the translated text will
+	automatically fallback and be copied to register 1 (see |quote_number|).
 ------------------------------------------------------------------------------
 |g:translator_color_translated_text|	  *g:translator_color_translated_text*
 	Foreground color of the translated text output.

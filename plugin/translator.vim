@@ -2,8 +2,8 @@ vim9script
 
 # File:         translator.vim
 # Type:         utility
-# Version:      2.0
-# Date:         2026 Jul 09
+# Version:      2.1
+# Date:         2026 Oct 14
 # Author:       MyRequiem <mrvladislavovich@gmail.com>
 # License:      MIT
 # Description:  Selected text translation utility using translate-shell.

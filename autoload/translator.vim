@@ -2,8 +2,8 @@ vim9script
 
 # File:         translator.vim
 # Type:         utility
-# Version:      2.0
-# Date:         2026 Jul 09
+# Version:      2.1
+# Date:         2026 Oct 14
 # Author:       MyRequiem <mrvladislavovich@gmail.com>
 # License:      MIT
 # Description:  Core logic for selected text translation.
@@ -66,8 +66,9 @@ export def Translate_selected()
     translated_text = substitute(translated_text, '\v\n+$', '', '')
 
     # Copy output to system clipboard if requested and supported.
-    if g:translator_copy_to_clipboard == 1 && has('unnamedplus')
-        @+ = translated_text
+    if g:translator_copy_to_clipboard == 1
+        var target_reg = has('unnamedplus') ? '+' : '1'
+        setreg(target_reg, translated_text)
     endif
 
     # Clear the "Translating selected text..." message from the command-line.
